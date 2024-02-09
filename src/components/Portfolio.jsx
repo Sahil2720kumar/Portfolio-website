@@ -51,7 +51,7 @@ const Single = ({ project }) => {
                     >
                         <motion.h2
                             variants={textUpVariant}
-                            className='text-[36px] md:text-[60px] lg:text-[50px]  font-bold text-center'
+                            className='text-[36px] md:text-[60px] lg:text-[50px]  font-bold text-center lg:text-left'
                         >
                             {project.name}
                         </motion.h2>
