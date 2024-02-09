@@ -9,7 +9,7 @@ import { contactValidator } from "@/lib/validators/contact";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { gql, GraphQLClient } from "graphql-request";
 import { toast } from "react-toastify";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 
 const cmsAPI = process.env.NEXT_PUBLIC_GRAPH_CMS_API_ENDPOINT;
 const graphcmsToken = process.env.NEXT_PUBLIC_GRAPH_CMS_TOKEN;
@@ -41,7 +41,7 @@ export default function Contact() {
     });
     console.log(errors);
     const ref = useRef();
-    const formRef=useRef()
+    const formRef = useRef();
     const isInView = useInView(ref, { margin: "-100px" });
 
     const saveContact = async data => {
@@ -99,15 +99,17 @@ export default function Contact() {
                         Mail
                     </motion.h2>
                     <motion.span className='text-base md:text-2xl'>
-                        hello@react.dev
+                        <a className="text-blue-500" href='mailto:sahilkr2909@gmail.com'>
+                            sahilkr2909@gmail.com
+                        </a>
                     </motion.span>
                 </motion.div>
                 <motion.div className='item' variants={Contactvariants}>
                     <motion.h2 className='text-2xl font-bold md:text-4xl '>
                         Address
                     </motion.h2>
-                    <motion.span className='text-base md:text-2xl '>
-                        Hello street New York
+                    <motion.span className='capitalize text-base md:text-2xl '>
+                        kail bari road dibrugarh, assam
                     </motion.span>
                 </motion.div>
                 <motion.div className='item' variants={Contactvariants}>
@@ -115,7 +117,7 @@ export default function Contact() {
                         Phone
                     </motion.h2>
                     <motion.span className='text-base md:text-2xl '>
-                        +1 234 5678
+                        +91 6026622188
                     </motion.span>
                 </motion.div>
             </motion.div>

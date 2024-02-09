@@ -7,7 +7,7 @@ import { HoverContext } from "@/providers/CursorHoverProvider";
 export default function Sidebar() {
     const ref = useRef();
     const { isHover, setIsHover } = useContext(HoverContext);
-
+    const [open, setOpen] = useState(false);
     useEffect(() => {
         const mouseEnter = () => {
             console.log("mouseEnter ");
@@ -49,7 +49,6 @@ export default function Sidebar() {
         }
     };
 
-    const [open, setOpen] = useState(false);
     return (
         <motion.div
             className='flex items-center justify-center flex-col bg-white text-black'
@@ -67,7 +66,12 @@ export default function Sidebar() {
                 className='fixed flex items-center justify-center w-[25px] h-[25px] rounded-full border-none bg-transparent z-[999] top-[40px] left-[37px] cursor-pointer'
                 onClick={() => setOpen(!open)}
             >
-                <svg width='23' height='23' viewBox='0 0 23 23'>
+                <motion.svg
+                    animate={open ? "open" : "closed"}
+                    width='23'
+                    height='23'
+                    viewBox='0 0 23 23'
+                >
                     <motion.path
                         strokeWidth='3'
                         stroke='black'
@@ -96,7 +100,7 @@ export default function Sidebar() {
                             open: { d: "M 3 2.5 L 17 16.346" }
                         }}
                     />
-                </svg>
+                </motion.svg>
             </button>
         </motion.div>
     );
