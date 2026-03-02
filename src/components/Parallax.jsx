@@ -37,9 +37,9 @@ export default function Parallax({ type }) {
                 style={{ y: yText }}
                 className='font-serif text-[70px] px-5 font-bold text-center'
             >
-                {type === "services" ? "What I'm Do?" : ""}
-                {type === "portfolio" ? "What I'm Did?" : ""}
-                {type === "skills" ? "What My Skills?" : ""}
+                {type === "services" ? "What am I doing?" : ""}
+                {type === "portfolio" ? "What did I do?" : ""}
+                {type === "skills" ? "What are my skills?" : ""}
             </motion.h1>
 
             <motion.div className='z-30 mountains bg-mountains bg-contain bg-no-repeat md:bg-cover bg-bottom w-full h-full absolute  '></motion.div>
